@@ -74,7 +74,7 @@ void __attribute__((interrupt(PORT1_VECTOR))) Port1 (void)
 {
     P1IFG &= ~0xFB;         //Clears P1.3 IFG
 
-    P1OOUT ^= 0x01;         //Toggles LED
+    P1OUT ^= 0x01;         //Toggles LED
     P1IE &= 0xFB;           //Turns off port interrupts
     TA0CTL |= TACLR;        //Resets timer
     TA0CTL |= TAIE;         //enable timer interrupts
